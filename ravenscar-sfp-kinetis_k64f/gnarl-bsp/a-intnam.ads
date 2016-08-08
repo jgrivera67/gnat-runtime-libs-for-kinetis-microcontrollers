@@ -30,6 +30,7 @@
 ------------------------------------------------------------------------------
 
 --  This is the version for Cortex M4F Kinetis K64F targets
+with Kinetis_K64F;
 
 package Ada.Interrupts.Names is
 
@@ -43,7 +44,33 @@ package Ada.Interrupts.Names is
    --  First_IRQ constant.
 
    Sys_Tick_Interrupt               : constant Interrupt_ID := 1;
-   DMA0_Interrupt                   : constant Interrupt_ID := 2;
+   DMA0_Interrupt                   : constant Interrupt_ID :=
+     Kinetis_K64F.External_Interrupt_Type'Pos (Kinetis_K64F.DMA0_IRQ) + 2;
+
+   UART0_Interrupt                   : constant Interrupt_ID :=
+     Kinetis_K64F.External_Interrupt_Type'Pos (Kinetis_K64F.UART0_RX_TX_IRQ) +
+     2;
+
+   UART1_Interrupt                   : constant Interrupt_ID :=
+     Kinetis_K64F.External_Interrupt_Type'Pos (Kinetis_K64F.UART1_RX_TX_IRQ) +
+     2;
+
+   UART2_Interrupt                   : constant Interrupt_ID :=
+     Kinetis_K64F.External_Interrupt_Type'Pos (Kinetis_K64F.UART2_RX_TX_IRQ) +
+     2;
+
+   UART3_Interrupt                   : constant Interrupt_ID :=
+     Kinetis_K64F.External_Interrupt_Type'Pos (Kinetis_K64F.UART3_RX_TX_IRQ) +
+     2;
+
+   UART4_Interrupt                   : constant Interrupt_ID :=
+     Kinetis_K64F.External_Interrupt_Type'Pos (Kinetis_K64F.UART4_RX_TX_IRQ) +
+     2;
+
+   UART5_Interrupt                   : constant Interrupt_ID :=
+     Kinetis_K64F.External_Interrupt_Type'Pos (Kinetis_K64F.UART5_RX_TX_IRQ) +
+     2;
+
    --  ...
 
 end Ada.Interrupts.Names;

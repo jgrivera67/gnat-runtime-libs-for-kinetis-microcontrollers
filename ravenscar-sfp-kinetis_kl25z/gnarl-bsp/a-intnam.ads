@@ -29,7 +29,7 @@
 --                                                                          --
 ------------------------------------------------------------------------------
 
---  This is the version for Cortex M4F Kinetis K64F targets
+--  This is the version for Cortex M0+ Kinetis KL25Z targets
 with Kinetis_KL25Z;
 
 package Ada.Interrupts.Names is

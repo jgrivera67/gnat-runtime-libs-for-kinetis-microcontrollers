@@ -98,6 +98,19 @@ SECTIONS
   } > sram
   __data_words = (__data_end - __data_start) >> 2;
 
+ /*
+  * Special data section for global variables that keep their values across
+  * resets:
+  */
+ .reset_persistent_data :
+ {
+    . = ALIGN(4);
+    KEEP(*(.cpu_reset_counter))
+    KEEP(*(.watchdog))
+    KEEP(*(.runtime_logs))
+    . = ALIGN(4);
+ } > sram
+
   .bss (NOLOAD): {
    . = ALIGN(0x8);
    __bss_start = .;

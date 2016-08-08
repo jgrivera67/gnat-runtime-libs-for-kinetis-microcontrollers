@@ -215,4 +215,8 @@ package Kinetis_K64F.UART is
 
    Uart4_Registers : aliased Registers_Type with
      Import, Address => System'To_Address (16#400EA000#);
+
+   Uart5_Registers : aliased Registers_Type with
+     Import, Address => System'To_Address (16#400EB000#);
+
 end Kinetis_K64F.UART;
