@@ -11,7 +11,7 @@
    package Compiler is
       Common_Required_Switches := ("-mlittle-endian",
                                    "-mcpu=cortex-m0plus", "-mthumb",
-                                   "-Wstack-usage=256", "-fno-omit-frame-pointer");
+                                   "-fno-omit-frame-pointer");
 
       for Leading_Required_Switches ("Ada") use
          Compiler'Leading_Required_Switches ("Ada") &amp;
