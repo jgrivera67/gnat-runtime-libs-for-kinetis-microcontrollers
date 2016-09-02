@@ -42,7 +42,7 @@ package body System.Text_IO is
    use Interfaces.Bit_Types;
    use Microcontroller_Clocks;
 
-   Baud_Rate : constant := 9600;
+   Baud_Rate : constant := 115200;
    --  Bitrate to use
 
    ---------

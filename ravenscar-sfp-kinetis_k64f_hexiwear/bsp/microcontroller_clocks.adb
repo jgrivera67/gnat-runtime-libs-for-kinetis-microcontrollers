@@ -87,6 +87,7 @@ package body Microcontroller_Clocks is
          C7_Value.OSCSEL := 0;
          MCG.Registers.C7 := C7_Value;
 
+         --  Select external reference clock
          MCG.Registers.C1 := (CLKS => 2, FRDIV => 5, IRCLKEN => 1,
                               others => 0);
 
@@ -111,7 +112,7 @@ package body Microcontroller_Clocks is
          end loop;
 
          --  Switch to PBE Mode:
-         MCG.Registers.C6 := (PLLS => 1, VDIV0 => 16#18#, others => 0);
+         MCG.Registers.C6 := (PLLS => 1, VDIV0 => 16#10#, others => 0);
 
          --  Wait until external reference clock is selected as MCG output:
          loop
