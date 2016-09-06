@@ -105,10 +105,12 @@ SECTIONS
  .reset_persistent_data :
  {
     . = ALIGN(4);
+    __reset_persistent_data_start = .;
     KEEP(*(.cpu_reset_counter))
     KEEP(*(.watchdog))
     KEEP(*(.runtime_logs))
     . = ALIGN(4);
+    __reset_persistent_data_end = .;
  } > sram
 
   .bss (NOLOAD): {
