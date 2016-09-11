@@ -65,6 +65,9 @@ package Kinetis_K64F.PORT is
 
    type Pin_Index_Type is range 0 .. Num_Pins_Per_Port - 1;
 
+   type Pin_Array_Type is array (Pin_Index_Type) of Bit
+     with Component_Size => 1, Size => Word'Size;
+
    type PCR_Array is array (Pin_Index_Type) of PCR_Type;
 
    --
@@ -75,7 +78,7 @@ package Kinetis_K64F.PORT is
       GPCLR : Word;
       GPCHR : Word;
       Reserved_0 : Bytes_Array (1 .. 24);
-      ISFR : Word;
+      ISFR : Pin_Array_Type;
       Reserved_1 : Bytes_Array (1 .. 28);
       DFER :  Word;
       DFCR :  Word;

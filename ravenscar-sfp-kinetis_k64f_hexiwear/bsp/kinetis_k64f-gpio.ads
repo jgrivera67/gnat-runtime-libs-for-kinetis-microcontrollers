@@ -35,20 +35,16 @@ with Kinetis_K64F.PORT;
 package Kinetis_K64F.GPIO is
    pragma Preelaborate;
 
-   --  GPIO Pin array type
-   type Pin_Array is array (PORT.Pin_Index_Type) of Bit
-     with Component_Size => 1, Size => Word'Size;
-
    --
    --  GPIO registers
    --
    type Registers_Type is record
-      PDOR : Pin_Array;
-      PSOR : Pin_Array;
-      PCOR : Pin_Array;
-      PTOR : Pin_Array;
-      PDIR : Pin_Array;
-      PDDR : Pin_Array;
+      PDOR : PORT.Pin_Array_Type;
+      PSOR : PORT.Pin_Array_Type;
+      PCOR : PORT.Pin_Array_Type;
+      PTOR : PORT.Pin_Array_Type;
+      PDIR : PORT.Pin_Array_Type;
+      PDDR : PORT.Pin_Array_Type;
    end record with Volatile, Size => 16#18# * Byte'Size;
 
    PortA_Registers : aliased Registers_Type with

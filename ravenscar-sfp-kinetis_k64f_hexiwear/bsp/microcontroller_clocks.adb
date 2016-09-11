@@ -141,10 +141,10 @@ package body Microcontroller_Clocks is
       end Pll_Init;
 
       SCGC5_Value : SIM.SCGC5_Type;
-   begin
-      --  Enable all of the GPIO port clocks. These have to be enabled to
-      --  configure pin muxing options, so most code will need all of these on
-      --  anyway:
+
+   begin -- Initialize
+
+      --  Enable all of the GPIO port clocks:
       SCGC5_Value := SIM.Registers.SCGC5;
       SCGC5_Value.PORTA := 1;
       SCGC5_Value.PORTB := 1;

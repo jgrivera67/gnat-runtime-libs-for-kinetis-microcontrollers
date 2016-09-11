@@ -43,6 +43,13 @@ package Kinetis_KL25Z is
 
    type Hertz_Type is range 1 .. 1_000_000_000;
 
+   subtype Two_Bits is UInt2;
+   subtype Three_Bits is UInt3;
+   subtype Four_Bits is UInt4;
+   subtype Five_Bits is UInt5;
+   subtype Six_Bits is UInt6;
+   subtype Half_Word is Unsigned_16;
+
    type External_Interrupt_Type is
      (DMA0_IRQ,
       DMA1_IRQ,

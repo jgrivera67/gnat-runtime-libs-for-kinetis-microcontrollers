@@ -156,7 +156,8 @@ package body Microcontroller_Clocks is
 
       SCGC5_Value : SIM.SCGC5_Type;
       CLKDIV1_Value : SIM.CLKDIV1_Type;
-   begin
+
+   begin -- Initialize
       pragma Assert (Crystal_Frequency_Hz < Cpu_Clock_Frequency);
 
       --
@@ -173,8 +174,7 @@ package body Microcontroller_Clocks is
       Pll_Init;
 
       --
-      --  Enable clocks for all GPIO ports. These have to be enabled before
-      --  we can configure pin muxing:
+      --  Enable clocks for all GPIO ports:
       --
       SCGC5_Value := SIM.Registers.SCGC5;
       SCGC5_Value.PORTA := 1;
