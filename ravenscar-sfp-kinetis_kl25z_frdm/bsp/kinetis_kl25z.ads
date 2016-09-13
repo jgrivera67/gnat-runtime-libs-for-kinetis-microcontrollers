@@ -41,8 +41,6 @@ package Kinetis_KL25Z is
 
    type Bytes_Array is array (Positive range <>) of Byte;
 
-   type Hertz_Type is range 1 .. 1_000_000_000;
-
    subtype Two_Bits is UInt2;
    subtype Three_Bits is UInt3;
    subtype Four_Bits is UInt4;

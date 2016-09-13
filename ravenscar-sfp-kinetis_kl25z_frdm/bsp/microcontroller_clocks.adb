@@ -33,7 +33,8 @@ package body Microcontroller_Clocks is
    use Kinetis_KL25Z;
    use Interfaces.Bit_Types;
 
-   subtype Crystal_Frequency_Hz_Type is Integer range 5_000_000 .. 10_000_000;
+   subtype Crystal_Frequency_Hz_Type is
+     Hertz_Type range 5_000_000 .. 10_000_000;
    subtype Pll_Divider_Type is Integer range 1 .. 25;
    subtype Pll_Multiplier_Type is Integer range 24 .. 50;
 
@@ -199,7 +200,7 @@ package body Microcontroller_Clocks is
       Prdiv := Natural (C5_Value.PRDIV0) + 1;
       C6_Value := MCG.Registers.C6;
       Vdiv := Natural (C6_Value.VDIV0) + 24;
-      Pll_Freq := (Crystal_Frequency_Hz / Prdiv) * Vdiv;
+      Pll_Freq := (Natural (Crystal_Frequency_Hz) / Prdiv) * Vdiv;
       return Pll_Freq;
    end Get_Pll_Frequency_Hz;
 

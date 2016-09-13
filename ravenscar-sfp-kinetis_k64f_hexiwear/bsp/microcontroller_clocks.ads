@@ -29,11 +29,13 @@ pragma Restrictions (No_Elaboration_Code);
 package Microcontroller_Clocks is
    pragma Preelaborate;
 
-   Cpu_Clock_Frequency : constant := 120_000_000;
+   type Hertz_Type is range 1 .. 1_000_000_000;
 
-   System_Clock_Frequency : constant := Cpu_Clock_Frequency;
+   Cpu_Clock_Frequency : constant Hertz_Type := 120_000_000;
 
-   Bus_Clock_Frequency : constant := Cpu_Clock_Frequency / 2;
+   System_Clock_Frequency : constant Hertz_Type := Cpu_Clock_Frequency;
+
+   Bus_Clock_Frequency : constant Hertz_Type := Cpu_Clock_Frequency / 2;
 
    procedure Initialize;
 
