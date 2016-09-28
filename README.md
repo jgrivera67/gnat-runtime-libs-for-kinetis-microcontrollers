@@ -12,7 +12,9 @@ To use a library from this repository, follow the instructions below.
   the linker links the libgcc for armv7-m instead of the armv6-m libgcc. 
   This causes the wrong `__aeabi_idiv` to be linked. The armv7-m `__aeabi_idiv` 
   uses an `it` instruction which does not exist for cortex-m0+ (armv6-m). This 
-  causes the code generated for division expressions to hit a hardware exception  
+  causes the code generated for division expressions to trigger a hardware exception.
+   A workaround for this problem is to replace the libgcc.a library in your
+   <gnat-installation-path>/lib/gcc/arm-eabi/4.9.4 with the armv6-m flavor of this library.
 
 ## ravenscar-sfp-kinetis_k64f
 
