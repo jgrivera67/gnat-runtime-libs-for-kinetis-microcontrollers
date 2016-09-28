@@ -1,7 +1,1 @@
 *~
-.#*#
-
-# Ignore generated object library directories
-*/adalib
-*/obj
-
