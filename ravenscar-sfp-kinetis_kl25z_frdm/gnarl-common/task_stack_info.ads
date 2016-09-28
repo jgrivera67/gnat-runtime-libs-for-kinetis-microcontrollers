@@ -31,6 +31,7 @@ with Interfaces; use Interfaces;
 --  @summary Extract stack information for the calling task
 --
 package Task_Stack_Info is
+   pragma Preelaborate;
 
    procedure Get_Current_Task_Stack (Stack_Address : out Address;
                                      Stack_Size : out Unsigned_32);
