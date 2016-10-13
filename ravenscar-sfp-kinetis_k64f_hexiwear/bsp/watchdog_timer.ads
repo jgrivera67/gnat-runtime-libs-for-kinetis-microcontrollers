@@ -28,5 +28,5 @@ pragma Restrictions (No_Elaboration_Code);
 
 package Watchdog_Timer is
 
-   procedure Initialize (Watchdog_On : Boolean);
+   procedure Initialize;
 end Watchdog_Timer;
